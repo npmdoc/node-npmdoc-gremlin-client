@@ -1,0 +1,1065 @@
+<div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a
+
+        href="https://github.com/gulthor/gremlin-client"
+
+    >gremlin-client (v1.0.3)</a>
+</h1>
+<h4>JavaScript client for TinkerPop3 Gremlin Server</h4>
+<div class="apidocSectionDiv"><a
+    href="#apidoc.tableOfContents"
+    id="apidoc.tableOfContents"
+><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gremlin-client">module gremlin-client</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gremlin-client.createClient">
+            function <span class="apidocSignatureSpan">gremlin-client.</span>createClient
+            <span class="apidocSignatureSpan">(port, host, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gremlin-client.gremlinclient">
+            function <span class="apidocSignatureSpan">gremlin-client.</span>gremlinclient
+            <span class="apidocSignatureSpan">(port, host, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gremlin-client.messagestream">
+            function <span class="apidocSignatureSpan">gremlin-client.</span>messagestream
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gremlin-client.</span>gremlin</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gremlin-client.</span>gremlinclient.prototype</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">gremlin-client.</span>messagestream.prototype</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gremlin-client.gremlin">module gremlin-client.gremlin</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gremlin-client.gremlin.createClient">
+            function <span class="apidocSignatureSpan">gremlin-client.gremlin.</span>createClient
+            <span class="apidocSignatureSpan">(port, host, options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gremlin-client.gremlinclient">module gremlin-client.gremlinclient</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gremlin-client.gremlinclient.gremlinclient">
+            function <span class="apidocSignatureSpan">gremlin-client.</span>gremlinclient
+            <span class="apidocSignatureSpan">(port, host, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gremlin-client.gremlinclient.super_">
+            function <span class="apidocSignatureSpan">gremlin-client.gremlinclient.</span>super_
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gremlin-client.gremlinclient.prototype">module gremlin-client.gremlinclient.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gremlin-client.gremlinclient.prototype.buildCommand">
+            function <span class="apidocSignatureSpan">gremlin-client.gremlinclient.prototype.</span>buildCommand
+            <span class="apidocSignatureSpan">(script, bindings, message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gremlin-client.gremlinclient.prototype.cancelPendingCommands">
+            function <span class="apidocSignatureSpan">gremlin-client.gremlinclient.prototype.</span>cancelPendingCommands
+            <span class="apidocSignatureSpan">(reason)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gremlin-client.gremlinclient.prototype.execute">
+            function <span class="apidocSignatureSpan">gremlin-client.gremlinclient.prototype.</span>execute
+            <span class="apidocSignatureSpan">(script, bindings, message, callback)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gremlin-client.gremlinclient.prototype.executeQueue">
+            function <span class="apidocSignatureSpan">gremlin-client.gremlinclient.prototype.</span>executeQueue
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gremlin-client.gremlinclient.prototype.extractFunctionBody">
+            function <span class="apidocSignatureSpan">gremlin-client.gremlinclient.prototype.</span>extractFunctionBody
+            <span class="apidocSignatureSpan">(fn)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gremlin-client.gremlinclient.prototype.handleDisconnection">
+            function <span class="apidocSignatureSpan">gremlin-client.gremlinclient.prototype.</span>handleDisconnection
+            <span class="apidocSignatureSpan">(event)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gremlin-client.gremlinclient.prototype.handleMessage">
+            function <span class="apidocSignatureSpan">gremlin-client.gremlinclient.prototype.</span>handleMessage
+            <span class="apidocSignatureSpan">(event)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gremlin-client.gremlinclient.prototype.messageStream">
+            function <span class="apidocSignatureSpan">gremlin-client.gremlinclient.prototype.</span>messageStream
+            <span class="apidocSignatureSpan">(script, bindings, message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gremlin-client.gremlinclient.prototype.onConnectionOpen">
+            function <span class="apidocSignatureSpan">gremlin-client.gremlinclient.prototype.</span>onConnectionOpen
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gremlin-client.gremlinclient.prototype.sendCommand">
+            function <span class="apidocSignatureSpan">gremlin-client.gremlinclient.prototype.</span>sendCommand
+            <span class="apidocSignatureSpan">(command)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gremlin-client.gremlinclient.prototype.sendMessage">
+            function <span class="apidocSignatureSpan">gremlin-client.gremlinclient.prototype.</span>sendMessage
+            <span class="apidocSignatureSpan">(message)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gremlin-client.gremlinclient.prototype.stream">
+            function <span class="apidocSignatureSpan">gremlin-client.gremlinclient.prototype.</span>stream
+            <span class="apidocSignatureSpan">(script, bindings, message)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gremlin-client.messagestream">module gremlin-client.messagestream</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gremlin-client.messagestream.messagestream">
+            function <span class="apidocSignatureSpan">gremlin-client.</span>messagestream
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gremlin-client.messagestream.super_">
+            function <span class="apidocSignatureSpan">gremlin-client.messagestream.</span>super_
+            <span class="apidocSignatureSpan">(options)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.gremlin-client.messagestream.prototype">module gremlin-client.messagestream.prototype</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.gremlin-client.messagestream.prototype._read">
+            function <span class="apidocSignatureSpan">gremlin-client.messagestream.prototype.</span>_read
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gremlin-client" id="apidoc.module.gremlin-client">module gremlin-client</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gremlin-client.createClient" id="apidoc.element.gremlin-client.createClient">
+        function <span class="apidocSignatureSpan">gremlin-client.</span>createClient
+        <span class="apidocSignatureSpan">(port, host, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createClient = function (port, host, options) {
+  if (typeof port === &#x27;object&#x27;) {
+    options = port;
+    port = undefined;
+  }
+
+  if (typeof host === &#x27;object&#x27;) {
+    options = host;
+    host = undefined;
+  }
+
+  return new GremlinClient(port, host, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+### Creating a new client
+
+```javascript
+// Assuming Node.js or Browser environment with browserify:
+var gremlin = require(&#x27;gremlin-client&#x27;);
+
+// Will open a WebSocket to ws://localhost:8182 by default
+var client = gremlin.<span class="apidocCodeKeywordSpan">createClient</span>();
+```
+This is a shorthand for:
+```javascript
+var client = gremlin.createClient(8182, &#x27;localhost&#x27;);
+```
+
+If you want to use Gremlin Server sessions, you can set the `session` argument as true in the `options` object:
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gremlin-client.gremlinclient" id="apidoc.element.gremlin-client.gremlinclient">
+        function <span class="apidocSignatureSpan">gremlin-client.</span>gremlinclient
+        <span class="apidocSignatureSpan">(port, host, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function GremlinClient(port, host, options) {
+  this.port = port || 8182;
+  this.host = host || &#x27;localhost&#x27;;
+
+  this.options = _.defaults(options || {}, {
+    language: &#x27;gremlin-groovy&#x27;,
+    session: false,
+    op: &#x27;eval&#x27;,
+    processor: &#x27;&#x27;,
+    accept: &#x27;application/json&#x27;,
+    executeHandler: executeHandler
+  });
+
+  this.useSession = this.options.session;
+
+  if (this.useSession) {
+    this.sessionId = uuid.v1();
+  }
+
+  this.connected = false;
+  this.queue = [];
+
+  this.commands = {};
+
+  // Open websocket connection
+  this.ws = new WebSocket(&#x27;ws://&#x27;+ this.host +&#x27;:&#x27;+ this.port);
+
+  this.ws.onopen = this.onConnectionOpen.bind(this);
+
+  this.ws.onerror = function(e) {
+    console.log(&#x27;Error:&#x27;, e);
+  };
+
+  this.ws.onmessage = this.handleMessage.bind(this);
+
+  this.ws.onclose = this.handleDisconnection.bind(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gremlin-client.messagestream" id="apidoc.element.gremlin-client.messagestream">
+        function <span class="apidocSignatureSpan">gremlin-client.</span>messagestream
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function MessageStream() {
+  ReadableStream.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gremlin-client.gremlin" id="apidoc.module.gremlin-client.gremlin">module gremlin-client.gremlin</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gremlin-client.gremlin.createClient" id="apidoc.element.gremlin-client.gremlin.createClient">
+        function <span class="apidocSignatureSpan">gremlin-client.gremlin.</span>createClient
+        <span class="apidocSignatureSpan">(port, host, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">createClient = function (port, host, options) {
+  if (typeof port === &#x22;object&#x22;) {
+    options = port;
+    port = undefined;
+  }
+
+  if (typeof host === &#x22;object&#x22;) {
+    options = host;
+    host = undefined;
+  }
+
+  return new GremlinClient(port, host, options);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+### Creating a new client
+
+```javascript
+// Assuming Node.js or Browser environment with browserify:
+var gremlin = require(&#x27;gremlin-client&#x27;);
+
+// Will open a WebSocket to ws://localhost:8182 by default
+var client = gremlin.<span class="apidocCodeKeywordSpan">createClient</span>();
+```
+This is a shorthand for:
+```javascript
+var client = gremlin.createClient(8182, &#x27;localhost&#x27;);
+```
+
+If you want to use Gremlin Server sessions, you can set the `session` argument as true in the `options` object:
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gremlin-client.gremlinclient" id="apidoc.module.gremlin-client.gremlinclient">module gremlin-client.gremlinclient</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gremlin-client.gremlinclient.gremlinclient" id="apidoc.element.gremlin-client.gremlinclient.gremlinclient">
+        function <span class="apidocSignatureSpan">gremlin-client.</span>gremlinclient
+        <span class="apidocSignatureSpan">(port, host, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function GremlinClient(port, host, options) {
+  this.port = port || 8182;
+  this.host = host || &#x27;localhost&#x27;;
+
+  this.options = _.defaults(options || {}, {
+    language: &#x27;gremlin-groovy&#x27;,
+    session: false,
+    op: &#x27;eval&#x27;,
+    processor: &#x27;&#x27;,
+    accept: &#x27;application/json&#x27;,
+    executeHandler: executeHandler
+  });
+
+  this.useSession = this.options.session;
+
+  if (this.useSession) {
+    this.sessionId = uuid.v1();
+  }
+
+  this.connected = false;
+  this.queue = [];
+
+  this.commands = {};
+
+  // Open websocket connection
+  this.ws = new WebSocket(&#x27;ws://&#x27;+ this.host +&#x27;:&#x27;+ this.port);
+
+  this.ws.onopen = this.onConnectionOpen.bind(this);
+
+  this.ws.onerror = function(e) {
+    console.log(&#x27;Error:&#x27;, e);
+  };
+
+  this.ws.onmessage = this.handleMessage.bind(this);
+
+  this.ws.onclose = this.handleDisconnection.bind(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gremlin-client.gremlinclient.super_" id="apidoc.element.gremlin-client.gremlinclient.super_">
+        function <span class="apidocSignatureSpan">gremlin-client.gremlinclient.</span>super_
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function EventEmitter() {
+  EventEmitter.init.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gremlin-client.gremlinclient.prototype" id="apidoc.module.gremlin-client.gremlinclient.prototype">module gremlin-client.gremlinclient.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gremlin-client.gremlinclient.prototype.buildCommand" id="apidoc.element.gremlin-client.gremlinclient.prototype.buildCommand">
+        function <span class="apidocSignatureSpan">gremlin-client.gremlinclient.prototype.</span>buildCommand
+        <span class="apidocSignatureSpan">(script, bindings, message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">buildCommand = function (script, bindings, message) {
+  if (typeof script === &#x27;function&#x27;) {
+    script = this.extractFunctionBody(script);
+  }
+  bindings = bindings || {};
+
+  var messageStream = new MessageStream({ objectMode: true });
+  var guid = uuid.v1();
+  var args = _.defaults(message &#x26;&#x26; message.args || {}, {
+    gremlin: script,
+    bindings: bindings,
+    accept: this.options.accept,
+    language: this.options.language,
+  });
+
+  message = _.defaults(message || {}, {
+    requestId: guid,
+    processor: this.options.processor,
+    op: this.options.op,
+    args: args
+  });
+
+  var command = {
+    message: message,
+    messageStream: messageStream
+  };
+
+  if (this.useSession) {
+    // Assume that people want to use the &#x27;session&#x27; processor unless specified
+    command.message.processor = message.processor || this.options.processor || &#x27;session&#x27;;
+    command.message.args.session = this.sessionId;
+  }
+
+  return command;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * @public
+ * @param {String|Function} script
+ * @param {Object} bindings
+ * @param {Object} message
+ * @return {MessageStream}
+ */
+GremlinClient.prototype.messageStream = function (script, bindings, message) {
+  var command = this.<span class="apidocCodeKeywordSpan">buildCommand</span>(script, bindings, message);
+
+  this.sendCommand(command); //todo improve for streams
+
+  return command.messageStream;
+};
+
+/**
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gremlin-client.gremlinclient.prototype.cancelPendingCommands" id="apidoc.element.gremlin-client.gremlinclient.prototype.cancelPendingCommands">
+        function <span class="apidocSignatureSpan">gremlin-client.gremlinclient.prototype.</span>cancelPendingCommands
+        <span class="apidocSignatureSpan">(reason)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">cancelPendingCommands = function (reason) {
+  var commands = this.commands;
+  var command;
+  var error = new Error(reason.message);
+  error.details = reason.details;
+
+  // Empty queue
+  this.queue.length = 0;
+  this.commands = {};
+
+  Object.keys(commands).forEach(function(key) {
+    command = commands[key];
+    command.messageStream.emit(&#x27;error&#x27;, error);
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ this.executeQueue();
+};
+
+/**
+* @param {CloseEvent} event
+*/
+GremlinClient.prototype.handleDisconnection = function (event) {
+ this.<span class="apidocCodeKeywordSpan">cancelPendingCommands</span>({
+   message: &#x22;WebSocket closed&#x22;,
+   details: event
+ });
+};
+
+/**
+* Process the current command queue, sending commands to Gremlin Server
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gremlin-client.gremlinclient.prototype.execute" id="apidoc.element.gremlin-client.gremlinclient.prototype.execute">
+        function <span class="apidocSignatureSpan">gremlin-client.gremlinclient.prototype.</span>execute
+        <span class="apidocSignatureSpan">(script, bindings, message, callback)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">execute = function (script, bindings, message, callback) {
+  callback = arguments[arguments.length - 1]; //todo: improve?
+
+  if (typeof message === &#x27;function&#x27;) {
+    callback = message;
+    message = {};
+  }
+
+  var messageStream = this.messageStream(script, bindings, message);
+
+  // TO CHECK: errors handling could be improved
+  // See https://groups.google.com/d/msg/nodejs/lJYT9hZxFu0/L59CFbqWGyYJ
+  // for an example using domains
+  var executeHandler = this.options.executeHandler;
+
+  executeHandler(messageStream, callback);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+query.on(&#x27;end&#x27;, function() {
+  console.log(&#x22;All results fetched&#x22;);
+});
+```
+
+This allows you to effectively `.pipe()` the stream to any other Node.js ReadableStream.
+
+#### Callback mode: client.<span class="apidocCodeKeywordSpan">execute</span>(script, bindings, message, callback)
+
+Will execute the provided callback when all results are actually returned from the server.
+
+```javascript
+var client = gremlin.createClient();
+
+client.execute(&#x27;g.V()&#x27;, function(err, results) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gremlin-client.gremlinclient.prototype.executeQueue" id="apidoc.element.gremlin-client.gremlinclient.prototype.executeQueue">
+        function <span class="apidocSignatureSpan">gremlin-client.gremlinclient.prototype.</span>executeQueue
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">executeQueue = function () {
+  var command;
+
+  while (this.queue.length &#x3e; 0) {
+    command = this.queue.shift();
+    this.sendMessage(command.message);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * Handle the WebSocket onOpen event, flag the client as connected and
+ * process command queue.
+ */
+GremlinClient.prototype.onConnectionOpen = function () {
+this.connected = true;
+this.emit(&#x22;connect&#x22;);
+
+this.<span class="apidocCodeKeywordSpan">executeQueue</span>();
+};
+
+/**
+ * @param {CloseEvent} event
+ */
+GremlinClient.prototype.handleDisconnection = function (event) {
+this.cancelPendingCommands({
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gremlin-client.gremlinclient.prototype.extractFunctionBody" id="apidoc.element.gremlin-client.gremlinclient.prototype.extractFunctionBody">
+        function <span class="apidocSignatureSpan">gremlin-client.gremlinclient.prototype.</span>extractFunctionBody
+        <span class="apidocSignatureSpan">(fn)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">extractFunctionBody = function (fn) {
+  var body = fn.toString();
+  body = body.substring(body.indexOf(&#x27;{&#x27;) + 1, body.lastIndexOf(&#x27;}&#x27;));
+
+  return body;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ *
+ * @param {String|Function} script
+ * @param {Object} bindings
+ * @param {Object} message
+ */
+GremlinClient.prototype.buildCommand = function (script, bindings, message) {
+if (typeof script === &#x22;function&#x22;) {
+  script = this.<span class="apidocCodeKeywordSpan">extractFunctionBody</span>(script);
+}
+bindings = bindings || {};
+
+var messageStream = new MessageStream({ objectMode: true });
+var guid = Guid.create().value;
+var args = _.defaults(message &#x26;&#x26; message.args || {}, {
+  gremlin: script,
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gremlin-client.gremlinclient.prototype.handleDisconnection" id="apidoc.element.gremlin-client.gremlinclient.prototype.handleDisconnection">
+        function <span class="apidocSignatureSpan">gremlin-client.gremlinclient.prototype.</span>handleDisconnection
+        <span class="apidocSignatureSpan">(event)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handleDisconnection = function (event) {
+  this.cancelPendingCommands({
+    message: &#x27;WebSocket closed&#x27;,
+    details: event
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gremlin-client.gremlinclient.prototype.handleMessage" id="apidoc.element.gremlin-client.gremlinclient.prototype.handleMessage">
+        function <span class="apidocSignatureSpan">gremlin-client.gremlinclient.prototype.</span>handleMessage
+        <span class="apidocSignatureSpan">(event)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">handleMessage = function (event) {
+  var rawMessage = JSON.parse(event.data || event); // Node.js || Browser API
+  var command = this.commands[rawMessage.requestId];
+  var statusCode = rawMessage.status.code;
+  var messageStream = command.messageStream;
+
+  switch (statusCode) {
+    case 200: // SUCCESS
+      delete this.commands[rawMessage.requestId]; // TODO: optimize performance
+      messageStream.push(rawMessage);
+      messageStream.push(null);
+      break;
+    case 204: // NO_CONTENT
+      messageStream.push(null);
+      break;
+    case 206: // PARTIAL_CONTENT
+      messageStream.push(rawMessage);
+      break;
+    default:
+      messageStream.emit(&#x27;error&#x27;, new Error(rawMessage.status.message + &#x27; (Error &#x27;+ statusCode +&#x27;)&#x27;));
+      break;
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gremlin-client.gremlinclient.prototype.messageStream" id="apidoc.element.gremlin-client.gremlinclient.prototype.messageStream">
+        function <span class="apidocSignatureSpan">gremlin-client.gremlinclient.prototype.</span>messageStream
+        <span class="apidocSignatureSpan">(script, bindings, message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">messageStream = function (script, bindings, message) {
+  var command = this.buildCommand(script, bindings, message);
+
+  this.sendCommand(command); //todo improve for streams
+
+  return command.messageStream;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+});
+```
+
+The client will internally concatenate all partial results returned over different messages (depending on the total number of results
+ and the value of `resultIterationBatchSize` set in your .yaml file).
+
+When the client receives the final `statusCode: 299` message, the callback will be executed.
+
+#### Message stream mode: client.<span class="apidocCodeKeywordSpan">messageStream</span>(script, bindings, message)
+
+A lower level method that returns a ReadableStream which emits the raw protocol messages returned by Gremlin Server as distinct `
+data` events.
+
+Although a public method, this is recommended for advanced usages only.
+
+```javascript
+var client = gremlin.createClient();
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gremlin-client.gremlinclient.prototype.onConnectionOpen" id="apidoc.element.gremlin-client.gremlinclient.prototype.onConnectionOpen">
+        function <span class="apidocSignatureSpan">gremlin-client.gremlinclient.prototype.</span>onConnectionOpen
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">onConnectionOpen = function () {
+  this.connected = true;
+  this.emit(&#x27;connect&#x27;);
+
+  this.executeQueue();
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gremlin-client.gremlinclient.prototype.sendCommand" id="apidoc.element.gremlin-client.gremlinclient.prototype.sendCommand">
+        function <span class="apidocSignatureSpan">gremlin-client.gremlinclient.prototype.</span>sendCommand
+        <span class="apidocSignatureSpan">(command)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendCommand = function (command) {
+  this.commands[command.message.requestId] = command;
+
+  if (this.connected) {
+    this.sendMessage(command.message);
+  } else {
+    this.queue.push(command);
+  }
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+* @param {Object} bindings
+* @param {Object} message
+* @return {MessageStream}
+*/
+GremlinClient.prototype.messageStream = function (script, bindings, message) {
+ var command = this.buildCommand(script, bindings, message);
+
+ this.<span class="apidocCodeKeywordSpan">sendCommand</span>(command); //todo improve for streams
+
+ return command.messageStream;
+};
+
+/**
+* Send a command to Gremlin Server, or add it to queue if the connection
+* is not established.
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gremlin-client.gremlinclient.prototype.sendMessage" id="apidoc.element.gremlin-client.gremlinclient.prototype.sendMessage">
+        function <span class="apidocSignatureSpan">gremlin-client.gremlinclient.prototype.</span>sendMessage
+        <span class="apidocSignatureSpan">(message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">sendMessage = function (message) {
+  this.ws.send(JSON.stringify(message));
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+ * (First In, First Out).
+ */
+GremlinClient.prototype.executeQueue = function () {
+  var command;
+
+  while (this.queue.length &#x3e; 0) {
+    command = this.queue.shift();
+    this.<span class="apidocCodeKeywordSpan">sendMessage</span>(command.message);
+  }
+};
+
+/**
+ * @param {Object} reason
+ */
+GremlinClient.prototype.cancelPendingCommands = function (reason) {
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gremlin-client.gremlinclient.prototype.stream" id="apidoc.element.gremlin-client.gremlinclient.prototype.stream">
+        function <span class="apidocSignatureSpan">gremlin-client.gremlinclient.prototype.</span>stream
+        <span class="apidocSignatureSpan">(script, bindings, message)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">stream = function (script, bindings, message) {
+  var messageStream = this.messageStream(script, bindings, message);
+  var _ = highland; // override lo-dash locally
+
+  // Create a local highland &#x27;through&#x27; pipeline so we don&#x27;t expose
+  // a Highland stream to the end user, but a standard Node.js Stream2
+  var through = _.pipeline(
+    _.map(function(message) {
+      return message.result.data;
+    }),
+    _.sequence()
+  );
+
+  var stream = messageStream.pipe(through);
+
+  messageStream.on(&#x27;error&#x27;, function(e) {
+    stream.emit(&#x27;error&#x27;, new Error(e));
+  });
+
+  return stream;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+### Sending scripts to Gremlin Server for execution
+The client supports three modes:
+* streaming results
+* callback mode (with internal buffer)
+* streaming protocol messages (for advanced usages)
+
+#### Stream mode: client.<span class="apidocCodeKeywordSpan">stream</span>(script, bindings, message)
+
+Return a Node.js ReadableStream set in Object mode. The stream emits a `data` event for each result returned by Gremlin Server.
+
+For each low level protocol message with potentially one or more results attached (depending on the value of `resultIterationBatchSize
+` in your .yaml file), the stream will always reemit one `data` event per result.
+
+The order in which results are returned should be guaranteed, allowing you to effectively use `order` steps and the like in your
+ Gremlin traversal.
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gremlin-client.messagestream" id="apidoc.module.gremlin-client.messagestream">module gremlin-client.messagestream</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gremlin-client.messagestream.messagestream" id="apidoc.element.gremlin-client.messagestream.messagestream">
+        function <span class="apidocSignatureSpan">gremlin-client.</span>messagestream
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function MessageStream() {
+  ReadableStream.apply(this, arguments);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.gremlin-client.messagestream.super_" id="apidoc.element.gremlin-client.messagestream.super_">
+        function <span class="apidocSignatureSpan">gremlin-client.messagestream.</span>super_
+        <span class="apidocSignatureSpan">(options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Readable(options) {
+  Duplex = Duplex || require(&#x27;./_stream_duplex&#x27;);
+
+  if (!(this instanceof Readable)) return new Readable(options);
+
+  this._readableState = new ReadableState(options, this);
+
+  // legacy
+  this.readable = true;
+
+  if (options &#x26;&#x26; typeof options.read === &#x27;function&#x27;) this._read = options.read;
+
+  Stream.call(this);
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.gremlin-client.messagestream.prototype" id="apidoc.module.gremlin-client.messagestream.prototype">module gremlin-client.messagestream.prototype</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.gremlin-client.messagestream.prototype._read" id="apidoc.element.gremlin-client.messagestream.prototype._read">
+        function <span class="apidocSignatureSpan">gremlin-client.messagestream.prototype.</span>_read
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">_read = function () {
+  this._paused = false;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  debug(&#x27;do read&#x27;);
+  state.reading = true;
+  state.sync = true;
+  // if the length is currently zero, then we *need* a readable event.
+  if (state.length === 0)
+    state.needReadable = true;
+  // call internal read method
+  this.<span class="apidocCodeKeywordSpan">_read</span>(state.highWaterMark);
+  state.sync = false;
+}
+
+// If _read pushed data synchronously, then `reading` will be false,
+// and we need to re-evaluate how much data we can return to the user.
+if (doRead &#x26;&#x26; !state.reading)
+  n = howMuchToRead(nOrig, state);
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
